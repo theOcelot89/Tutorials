@@ -37,7 +37,7 @@ def sim(variables, t, params):
 y = odeint(sim, steady_state_y0, t, args=(params,))
 
 
-# plot
+# plot population dynamics
 fig, (ax1,ax2) = plt.subplots(2)
 ax1.plot(t,y[:,0], color="b")
 # ax1.plot(t,y[:,1], color="g")
@@ -46,4 +46,14 @@ ax2.plot(t,y[:,1], color="r")
 ax1.set_ylabel('Fish')
 ax2.set_ylabel('Bears')
 ax2.set_xlabel("Time")
+
+
+# plot relationship between populations
+fig, axs =plt.subplots(2)
+axs[0].plot(y[:,0],y[:,1])
+axs[0].set_xlabel("Fish")
+axs[0].set_ylabel('Bears')
 plt.show()
+
+
+print(y)

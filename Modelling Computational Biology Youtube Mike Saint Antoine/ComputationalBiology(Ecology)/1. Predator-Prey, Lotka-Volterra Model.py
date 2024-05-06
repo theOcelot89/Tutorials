@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib
-# matplotlib.use('tkagg')
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
@@ -54,6 +52,3 @@ axs[0].plot(y[:,0],y[:,1])
 axs[0].set_xlabel("Fish")
 axs[0].set_ylabel('Bears')
 plt.show()
-
-
-print(y)
